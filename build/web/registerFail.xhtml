@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Registration Failed</title>
+        <h:outputStylesheet library="css" name="newnewcss.css"/>
+        <h:outputStylesheet library="css" name="responsive.css"/>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    </h:head>
+
+    <h:body>
+        <div id="header">
+
+            <div class="siteHeader">
+                <h1 class="siteHeaderBar">
+                    <div class="imageIndent">
+                    </div>
+                    <h:graphicImage value="resources/picturesForSIte/oliveBranch1.png" width="90" height="70" id="MMP-logo"/>
+                </h1>
+
+                <ul id="pagNaviHeader" class="horizBar" style="list-style-type:none" width="100">
+                    <li><a href="indexh.xhtml">Login</a></li>
+                    <li><a href="AboutUs3.xhtml"> About Us</a></li>
+
+
+
+                </ul>
+
+
+
+            </div>
+
+
+        </div>
+        <div class="wrap">
+            <div id="innerBackground">
+
+                <div id="content">
+
+                    <a ></a>	
+
+                    <div align="center">
+                        <h1><b>Welcome to MyMarketPlace</b></h1>
+                        <h6>Registration Failed.</h6>
+
+                    </div>
+                    <br>
+
+
+
+
+
+
+
+
+
+                        <div  align="center" class="RegBox input " >
+                            <h:form>
+                                <h:panelGrid >
+
+                                    <h:outputLabel  for="firstname"/>
+
+                                    <h:inputText  id="firstname" label="First Name"
+                                                  required="true" styleClass="input2"
+                                                  p:placeholder="First Name"
+                                                  value="#{rgbean.firstname}" />
+
+                                    <h:message for="firstname" style="color:red; display:block;"   />
+
+
+
+                                    <h:outputLabel  for="lastname"/>
+                                    <h:inputText id="lastname" label="Last Name"
+                                                 required="true"  styleClass="input2"
+                                                 p:placeholder="Last Name"
+                                                 value="#{rgbean.lastname}" />
+                                    <h:message for="lastname" style="color:red;" />
+
+                                    <h:outputLabel  for="securityQuestion"/>
+                                    <h:inputText id="securityQuestion" label="Security Question"
+                                                 required="true"  styleClass="input2"
+                                                 p:placeholder="Security Question: Street name of childhood home?"
+                                                 value="#{rgbean.securityQuestion}" />
+                                    <h:message for="securityQuestion" style="color:red;" />
+
+
+
+                                    <h:outputLabel for="password" />
+
+                                    <h:inputSecret id="password" label="Password" styleClass="input2"
+                                                   p:placeholder="Password" required="true"
+                                                   value="#{rgbean.password}">
+                                        <f:validator validatorId="passwordValidator"/>
+                                        <f:attribute name="passwordConfirm" value="#{passwordConfirm}" />
+                                    </h:inputSecret>  
+                                    <h:message for="password" style="color:red;" />
+
+
+
+
+
+
+
+                                    <h:outputLabel for="passwordConfirm"  />
+
+                                    <h:inputSecret id="passwordConfirm" label="Confirm Password"  styleClass="input2"
+                                                   p:placeholder="Confirm Password" required="true" binding="#{passwordConfirm}"
+                                                   >
+
+
+                                    </h:inputSecret> 
+                                    <h:message for="passwordConfirm" style="color:red;" />
+
+
+
+
+                                    <h:outputLabel   for="email"/>
+                                    <h:inputText  id="email" label="Email Address"
+                                                  required="true" styleClass="input2"
+                                                  p:placeholder="username@example.com"
+                                                  value="#{rgbean.email}"> 
+
+                                        <f:validator validatorId="emailValidator"/>
+
+                                    </h:inputText>
+                                    <h:message for="email" style="color:red;"  />
+
+
+                                    <h:panelGroup/>
+                                    <h:commandButton id="register"  value="Register"
+                                                     action="#{rgbean.add()}"  />
+
+
+
+
+
+
+                                </h:panelGrid>
+
+                            </h:form>
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+                    </br>
+
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+
+            <br>
+            </br>
+            <br>
+            </br>
+
+        </div>
+
+
+    </h:body>
+
+    <div align="center">
+        <div class= "footer">
+            <p1>Created by: Sammy A. </p1>
+        </div>	
+
+
+
+    </div>
+</html>

@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pi="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    
+    <h:head>
+        <title>Login</title>
+        <h:outputStylesheet library="css" name="newnewcss.css"/>
+        <h:outputStylesheet library="css" name="responsive.css"/>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+
+
+    </h:head>
+    <body class="center">
+        <div id="header">
+
+            <div class="siteHeader">
+                <h1 class="siteHeaderBar">
+                    <div class="imageIndent">
+                    </div>
+                    <h:graphicImage value="resources/picturesForSIte/oliveBranch1.png" width="90" height="70" id="MMP-logo"/>
+                </h1>
+                <div>
+
+                    <ul id="pagNaviHeader" class="horizBar" style="list-style-type:none" width="100">
+
+                        <li><a href="AboutUs3.xhtml"> About Us</a></li>
+
+
+                    </ul>
+                </div>
+
+
+
+
+            </div>
+
+
+        </div>
+
+
+        <pi:spacer height="5"></pi:spacer>
+        <div class="wrap">
+            <div id="innerBackground">
+
+                <div id="content">
+
+                    <a ><h:graphicImage value="resources/picturesForSIte/marketPlace.jpg" width="650" class="alignleft imageBorder" alt="marketPlace" /></a>	
+
+                    <div align="center">
+                        <h1><b>Welcome to MyMarketPlace</b></h1>
+                        <p> Thanks for choosing MyMarketPlace. At the marketplace you can post any items you'd like to sell. Simply create an account and begin posting, it's that easy. Good luck!  </p>
+                    </div>
+                    <br>
+
+
+
+
+
+
+
+
+
+
+
+
+                        <h:form class="form">
+
+                            <div   class="loginBox input">
+                                <pi:message for="email" style="color:red;" showSummary="false" />
+                                <h:inputText  id="email" label="Email Address"
+                                              required="true" styleClass="loginBox"
+                                              p:placeholder="username@example.com"
+                                              value="#{lgbean.email}" />         
+
+
+
+
+
+
+                                <pi:message for="password" style="color:red;" showSummary="false" />
+                                <h:inputSecret id="password" label="Password" value="#{lgbean.password}" styleClass="loginBox"
+                                               required="true" p:placeholder="Password">
+                                </h:inputSecret>
+
+
+
+
+
+                                <h:commandButton action="#{lgbean.validateEmailPassword}" value="Login" actionListener="#{user.attrListener}">
+
+                                    <f:attribute name="email"  value="#{lgbean.email}" />
+
+
+
+                                </h:commandButton>
+
+                                <h:button id="register"  class= "button " value="Register " outcome="needtoRegister.xhtml"/>
+
+                                <div class="forgot" >
+                                    <h:outputLink   value="passwordReset.xhtml">Forgot Password?</h:outputLink>
+                                </div>
+
+                            </div>
+                        </h:form>
+
+
+
+
+
+
+
+                        <div class=" ColLayout picLayout layout2">
+
+                            <h:graphicImage value="resources/picturesForSIte/bookimg2.jpg" class="alignleft imageBorder"  style= "width 308px; height:200px;" alt="books" />
+
+                        </div>
+
+
+
+                        <div class=" ColLayout layout2">
+
+                            <h:graphicImage value="resources/picturesForSIte/deviceimg2.jpg" class="alignleft imageBorder" style= "width 308px; height:200px;" alt="electronics" />	
+
+
+                        </div>
+                        <div class="ColLayout layout2">
+
+                            <h:graphicImage value="resources/picturesForSIte/clothes@.jpg" class="alignleft imageBorder"  style= "width 308px; height:200px;" alt="clothes" />	
+                        </div>
+
+
+
+
+                    </br>
+
+                </div>
+
+
+
+
+            </div>
+        </div>  </body>
+    <div align="center">
+        <div class= "footer">
+            <p1>Created by: Sammy A. </p1>
+        </div>	
+
+
+
+    </div>
+
+</html>
+

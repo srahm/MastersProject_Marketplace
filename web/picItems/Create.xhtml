@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="PicItemsCreateDlg" widgetVar="PicItemsCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreatePicItemsTitle}">
+            <h:form id="PicItemsCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{picItemsController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreatePicItemsLabel_emailAddress}" for="emailAddress" />
+                        <p:inputText id="emailAddress" value="#{picItemsController.selected.emailAddress}" title="#{bundle.CreatePicItemsTitle_emailAddress}" required="true" requiredMessage="#{bundle.CreatePicItemsRequiredMessage_emailAddress}"/>
+                        <p:outputLabel value="#{bundle.CreatePicItemsLabel_itemDesc}" for="itemDesc" />
+                        <p:inputText id="itemDesc" value="#{picItemsController.selected.itemDesc}" title="#{bundle.CreatePicItemsTitle_itemDesc}" />
+                        <p:outputLabel value="#{bundle.CreatePicItemsLabel_pictures}" for="pictures" />
+                        <p:inputTextarea rows="4" cols="30" id="pictures" value="#{picItemsController.selected.pictures}" title="#{bundle.CreatePicItemsTitle_pictures}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{picItemsController.create}" value="#{bundle.Save}" update="display,:PicItemsListForm:datalist,:growl" oncomplete="handleSubmit(args,'PicItemsCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="PicItemsCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="MppUsersViewDlg" widgetVar="MppUsersViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewMppUsersTitle}">
+            <h:form id="MppUsersViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{mppUsersController.selected != null}">
+                        <h:outputText value="#{bundle.ViewMppUsersLabel_emailAddress}"/>
+                        <h:outputText value="#{mppUsersController.selected.emailAddress}" title="#{bundle.ViewMppUsersTitle_emailAddress}"/>
+                        <h:outputText value="#{bundle.ViewMppUsersLabel_firstName}"/>
+                        <h:outputText value="#{mppUsersController.selected.firstName}" title="#{bundle.ViewMppUsersTitle_firstName}"/>
+                        <h:outputText value="#{bundle.ViewMppUsersLabel_lastName}"/>
+                        <h:outputText value="#{mppUsersController.selected.lastName}" title="#{bundle.ViewMppUsersTitle_lastName}"/>
+                        <h:outputText value="#{bundle.ViewMppUsersLabel_password}"/>
+                        <h:outputText value="#{mppUsersController.selected.password}" title="#{bundle.ViewMppUsersTitle_password}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="MppUsersViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

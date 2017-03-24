@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:pi="http://xmlns.jcp.org/jsf/passthrough">
+
+
+    <h:head>
+        <h:outputStylesheet library="css" name="newnewcss.css"/>
+        <h:outputStylesheet library="css" name="responsive.css"/>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+
+
+
+
+        <title>Register</title>
+    </h:head>
+
+    <h:body>
+
+
+
+
+
+
+
+        <div id="header">
+
+            <div class="siteHeader"  >
+                <h1 class="siteHeaderBar">
+                    <div class="imageIndent">
+                    </div>
+                    <h:graphicImage value="resources/picturesForSIte/oliveBranch1.png" width="90" height="70" id="MMP-logo"/>
+                </h1>
+                <div>
+
+                    <ul id="pagNaviHeader" class="horizBar" style="list-style-type:none" width="100">
+                        <li><a href="indexh.xhtml" >Login</a></li>
+
+
+                    </ul>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+        <div class="wrap">
+            <div id="innerBackground">
+
+
+                <div id="content">
+
+                    <div class=" ColLayout picLayout layout3">
+
+                        <h:graphicImage value="resources/picturesForSIte/NEIU_el_centro.jpg" class="alignleft imageBorder"  style= "width 200px; height:200px;" alt="books" />
+
+                    </div>
+
+
+
+                    <div class=" ColLayout layout3">
+
+                        <h:graphicImage value="resources/picturesForSIte/chicago2.jpg" class="alignleft imageBorder" style= "width 200px; height:200px;" alt="electronics" />	
+
+
+                    </div>
+                    <div class="ColLayout layout3">
+
+                        <h:graphicImage value="resources/picturesForSIte/NEIU-2.jpg" class="alignleft imageBorder"  style= "width 200px; height:200px;" alt="clothes" />	
+                    </div>
+
+
+                    <div  align="center" class="RegBox2" >
+
+
+
+                        <h2>Thanks for choosing My Marketplace!</h2> 
+                        <p>Please provide us with your neiu.edu email and we'll send you a registration link!  </p>
+
+
+
+
+
+
+                        <div  align="center" class="RegBox input" >
+
+                            <h:form>  
+                                <h:panelGrid >
+                                    <h:outputLabel   for="email"/>
+                                    <p:growl id="messages" globalOnly="true" autoUpdate="false"/>
+                                    <h:inputText  id="email" label="Email Address"
+                                                  required="true" styleClass="input2"
+                                                  pi:placeholder="YourEmailAddress@neiu.edu"
+                                                  value="#{sendAdminEmail.email}"> 
+
+
+                                        <f:validator validatorId="emailValidator"/>
+                                    </h:inputText>
+                                    <h:message for="email" style="color:red;"  />
+
+
+                                    <h:commandButton  id="sendAdminEmail"  value="Send"  action="#{sendAdminEmail.sendItRegister}">
+
+
+                                    </h:commandButton>
+
+                                </h:panelGrid>
+
+
+
+
+
+
+                            </h:form> 
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+
+
+        </div>
+        <br>
+        </br>
+        <br>
+        </br>
+
+
+
+    </h:body>
+
+    <div align="center">
+        <div class= "footer">
+            <p1>Created by: Sammy A. </p1>
+        </div>	
+
+
+
+    </div>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:pi="http://xmlns.jcp.org/jsf/passthrough">
+
+    <h:head>
+        <h:outputStylesheet library="css" name="newnewcss.css"/>
+        <h:outputStylesheet library="css" name="responsive.css"/>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>        <title>Post Item</title>
+    </h:head>
+
+    <h:body>
+        <div id="header">
+
+            <div class="siteHeader">
+                <h1 class="siteHeaderBar">
+                    <div class="imageIndent">
+                    </div>
+                    <h:graphicImage value="resources/picturesForSIte/oliveBranch1.png" width="90" height="70" id="MMP-logo"/>
+                </h1>
+                <div>
+                    <ul id="pagNaviHeader" class="horizBar" style="list-style-type:none" width="100">
+                        <li><a href="admin.xhtml" >Home</a></li>
+                        <li><a href="displayimage1.xhtml">Recently Posted</a></li>
+                        <li><a href="image.xhtml">Post Item</a></li>
+                        <li><a href="AboutUs.xhtml">About Us</a></li>
+
+                    </ul>
+                </div>
+                <div>
+                    <ul id="pagNaviHeader2" class="horizBar2" style="list-style-type:none">
+                        <h:form>
+                            <li>  <h:commandLink action="#{lgbean.logout}" value="Sign out">
+                                </h:commandLink>
+                            </li>
+                        </h:form>
+
+
+                    </ul>
+                </div>
+                <div>
+                    <ul id="pagNaviHeader4" class="horizBar3" style="list-style-type:none">
+
+                        <li><a href="userOptions.xhtml">My Account</a></li>
+
+
+
+
+
+                    </ul>
+                </div>
+                <div>
+                    <ul id="pagNaviHeader3" class="horizBar3" style="list-style-type:none">
+
+                        <li><a href="search.xhtml">Search</a></li>
+
+
+
+
+
+                    </ul>
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="wrap">
+            <div id="innerBackground">
+
+                <div id="content">
+
+                    <a ></a>	
+
+                    <div class="wordborder" align="center">
+                        <h3>Upload your image below</h3>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                    <div  align="center" class="RegBox input " >
+
+                        <h:form enctype="multipart/form-data" > 
+
+                            <h:panelGrid >
+                                <h:inputText  id="email" label="Email Address"
+                                              required="true" styleClass="input2"
+                                              pi:placeholder="username@example.com"
+                                              value="#{lgbean.email}"> 
+
+
+                                    <f:validator validatorId="emailValidator"/>
+
+                                </h:inputText>
+                                <h:outputText id="display" />
+                                <p:inputTextarea class="input2"   id="itemDesc" label="Item Desc"
+                                                 required="true" 
+                                                 p:placeholder="Type in a description"
+                                                 counter="display" maxlength="255" counterTemplate="{0} characters remaining." autoResize="false" 
+                                                 value="#{uploadImage.itemDesc}"/> 
+
+                                <h:outputText id="display2" />
+
+                                <p:inputTextarea class="input2"   id="Keywords" label="Keywords"
+                                                 required="true" 
+                                                 p:placeholder="Keywords"
+                                                 counter="display2" maxlength="255" counterTemplate="{0} characters remaining." autoResize="false" 
+                                                 value="#{uploadImage.keywords}"/> 
+
+
+
+                                <h:inputText  id="price" label="Price"
+                                              required="true" styleClass="input2"
+                                              pi:placeholder="$10.00"
+                                              value="#{uploadImage.price}">
+                                    <f:validator validatorId="priceValidator"/>
+                                </h:inputText>
+
+                                <p:messages showDetail="true" showSummary="false"  /> 
+
+
+
+
+                                <p:fileUpload  required="true" value="#{uploadImage.file}" mode="simple" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" /> 
+
+
+
+
+
+
+
+
+
+                                <h:commandButton id="register"  value="Submit" class="button"
+                                                 action="#{uploadImage.upload()}" actionListener="#{uploadImage.attrListener}"  > 
+                                    <f:attribute name="email"  value="#{lgbean.email}" />
+
+                                </h:commandButton>
+                            </h:panelGrid>
+
+
+
+
+
+
+                        </h:form> 
+                    </div>
+
+
+
+
+                    <div  align="center" class="RegBox input " >
+                        <h5>Helpful Tips</h5>
+                        <li>When posting include keywords</li>
+                        <li>Keep Descriptions concise</li>
+                        <li>View your posted items on your <a href="admin.xhtml" >Home</a> page</li>
+
+                    </div>		
+
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+
+            <br>
+            </br>
+            <br>
+            </br>
+
+
+            <br>
+            </br>
+        </div>
+
+
+    </h:body>
+
+    <div align="center">
+        <div class= "footer">
+            <p1>Created by: Sammy A. </p1>
+        </div>	
+
+
+
+    </div>
+</html>

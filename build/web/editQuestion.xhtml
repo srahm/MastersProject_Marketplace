@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:pi="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Edit</title>
+        <h:outputStylesheet library="css" name="newnewcss.css"/>
+        <h:outputStylesheet library="css" name="responsive.css"/>
+        <h:outputStylesheet library="css" name="primefaces.css"/>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    </h:head>
+
+    <h:body>
+        <div id="header">
+
+            <div class="siteHeader">
+                <h1 class="siteHeaderBar">
+                    <div class="imageIndent">
+                    </div>
+                    <h:graphicImage value="resources/picturesForSIte/oliveBranch1.png" width="90" height="70" id="MMP-logo"/>
+                </h1>
+                <div>
+                    <ul id="pagNaviHeader" class="horizBar" style="list-style-type:none" width="100">
+                        <li><a href="admin.xhtml" >Home</a></li>
+                        <li><a href="displayimage1.xhtml">Recently Posted</a></li>
+                        <li><a href="image.xhtml">Post Item</a></li>
+                        <li><a href="AboutUs.xhtml"> About Us</a></li>
+
+                    </ul>
+                </div>
+                <div>
+                    <ul id="pagNaviHeader2" class="horizBar2" style="list-style-type:none">
+                        <h:form>
+                            <li>  <h:commandLink action="#{lgbean.logout}" value="Sign out">
+                                </h:commandLink>
+                            </li>
+                        </h:form>
+
+
+
+
+                    </ul>
+                </div>
+
+                <div>
+                    <ul id="pagNaviHeader4" class="horizBar3" style="list-style-type:none">
+
+                        <li><a href="userOptions.xhtml">My Account</a></li>
+
+
+
+
+
+                    </ul>
+                </div>
+                <div>
+                    <ul id="pagNaviHeader3" class="horizBar3" style="list-style-type:none">
+
+                        <li><a href="search.xhtml">Search</a></li>
+
+
+
+
+
+                    </ul>
+                </div>
+
+
+            </div>
+
+
+        </div>
+        <div class="wrap">
+            <div id="innerBackground">
+
+                <div id="content">
+
+
+
+
+                    <br>
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="layout">
+
+
+
+                            <div class="wordborder" align="center">
+                                <h2>Edit Security Question</h2>
+                            </div>
+                            <br></br>
+
+                            <div align="center" >
+
+                                <h:graphicImage value="resources/picturesForSIte/edit-flat.png"   style= "width 200px; height:200px;" alt="edit" />
+
+                            </div>
+
+
+                            <h:form>
+
+                                <div  align="center" class="RegBox input " >
+                                    <h:panelGrid >
+                                        <h:outputLabel  for="securityQuestion"/>
+                                        <h:inputText id="securityQuestion" label="Security Question"
+                                                     required="true"  styleClass="input2"
+                                                     p:placeholder="Security Question: Street name of childhood home?"
+                                                     value="#{user.securityQuestion}" />
+                                        <h:message for="securityQuestion" style="color:red;" />
+
+
+
+                                        <h:commandButton action="#{user.updateSecQuestion}" value="Update">
+
+                                            <h:button class= "button " value="Cancel " outcome="userAccount.xhtml"/>
+                                        </h:commandButton>
+                                    </h:panelGrid>
+
+
+
+
+
+
+
+                                    <h:panelGroup/>
+
+
+                                </div>
+                            </h:form>
+
+
+
+
+
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <br>
+                    </br>
+                    <br>
+                    </br>
+                    <br>
+                    </br>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </h:body>
+
+    <div align="center">
+        <div class= "footer">
+            <p1>Created by: Sammy A. </p1>
+        </div>	
+
+
+
+    </div>
+</html>

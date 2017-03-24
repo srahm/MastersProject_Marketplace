@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:pi="http://xmlns.jcp.org/jsf/passthrough">
+
+
+    <h:head>
+        <h:outputStylesheet library="css" name= "newnewcss.css" />
+        <h:outputStylesheet library="css" name="responsive.css"/>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+
+
+
+
+        <title>About Us</title>
+    </h:head>
+
+    <h:body>
+
+
+
+
+
+
+
+        <div id="header">
+
+            <div class="siteHeader"  >
+                <h1 class="siteHeaderBar">
+                    <div class="imageIndent">
+                    </div>
+                    <h:graphicImage value="resources/picturesForSIte/oliveBranch1.png" width="90" height="70" id="MMP-logo"/>
+                </h1>
+                <div>
+
+                    <ul id="pagNaviHeader" class="horizBar" style="list-style-type:none" width="100">
+                        <li><a href="admin.xhtml" >Home</a></li>
+                        <li><a href="displayimage1.xhtml">Recently Posted</a></li>
+                        <li><a href="image.xhtml">Post Item</a></li>
+                        <li><a href="AboutUs.xhtml"> About Us</a></li>
+
+                    </ul>
+                </div>
+                <div>
+                    <ul id="pagNaviHeader2" class="horizBar2" style="list-style-type:none">
+                        <h:form>
+                            <li>  <h:commandLink action="#{lgbean.logout}" value="Sign out">
+                                </h:commandLink>
+                            </li>
+                        </h:form>
+
+
+
+                    </ul>
+                </div>
+
+                <div>
+                    <ul id="pagNaviHeader4" class="horizBar3" style="list-style-type:none">
+
+                        <li><a href="userOptions.xhtml">My Account</a></li>
+
+
+
+
+
+                    </ul>
+                </div>
+                <div>
+                    <ul id="pagNaviHeader3" class="horizBar3" style="list-style-type:none">
+
+                        <li><a href="search.xhtml">Search</a></li>
+
+
+
+
+
+                    </ul>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="wrap">
+            <div id="innerBackground">
+
+
+                <div id="content">
+
+                    <div class=" ColLayout picLayout layout3">
+
+                        <h:graphicImage value="resources/picturesForSIte/NEIU_el_centro.jpg" class="alignleft imageBorder"  style= "width 200px; height:200px;" alt="elCentro" />
+
+                    </div>
+
+
+
+                    <div class=" ColLayout layout3">
+
+                        <h:graphicImage value="resources/picturesForSIte/chicago2.jpg" class="alignleft imageBorder" style= "width 200px; height:200px;" alt="Chicago Skyline" />
+
+
+                    </div>
+                    <div class="ColLayout layout3">
+
+                        <h:graphicImage value="resources/picturesForSIte/NEIU-2.jpg" class="alignleft imageBorder"  style= "width 200px; height:200px;" alt="Neiu main campus" />
+                    </div>
+
+                    <div  align="center" class="RegBox2  " >
+                        <h2>What is MyMarketPlace? </h2>
+                        
+                        <p>MyMarketplace is a fully functional website where students and faculty at Northeastern Illinois University
+                            can sell their products and/or services. This site provides students and faculty the ability to create an account, upload pictures with a brief description, and view posted items.
+                            The intent of this site is to help you sell or purchase items at a discounted price without having to extensively search the Internet.
+                            Simply email the seller to arrange a time and place to meet. To avoid clutter and unwanted solicitation, students and
+                            faculty members with an neiu.edu email address can only access the marketplace and posts older than a month will be removed. Good Luck!</p>
+                        
+                        <h4>Need to reach us? Or need administrative access? Fill out the form below.</h4>
+
+
+
+
+
+                        <div  align="center" class="RegBox input" >
+
+                            <h:form>
+                                   <p:growl id="messages" globalOnly="true" autoUpdate="false"/>
+                                <h:panelGrid >
+                                    <h:outputLabel   for="email"/>
+                                    <h:inputText  id="email" label="Email Address"
+                                                  required="true" styleClass="input2"
+                                                  pi:placeholder="YourEmailAddress@neiu.edu"
+                                                  value="#{sendAdminEmail.email}">
+
+
+                                        <f:validator validatorId="emailValidator"/>
+                                    </h:inputText>
+                                    <h:message for="email" style="color:red;"  />
+
+
+                                    <h:inputTextarea rows="5"  id="itemDesc" label="Item Desc"
+                                                     required="true" styleClass="input2"
+                                                     pi:placeholder="Let us know what's on your mind. "
+                                                     value="#{sendAdminEmail.itemDesc}"/>
+
+
+
+
+                                    <h:commandButton  id="sendAdminEmail"  value="Send"  action="#{sendAdminEmail.sendIt}">
+
+
+                                    </h:commandButton>
+
+                                </h:panelGrid>
+
+
+
+
+
+
+                            </h:form>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+    </h:body>
+
+    <div align="center">
+        <div class= "footer">
+            <p1>Created by: Sammy A. </p1>
+        </div>	
+
+
+
+    </div>
+</html>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="MppUsersEditDlg" widgetVar="MppUsersEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditMppUsersTitle}">
+            <h:form id="MppUsersEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{mppUsersController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditMppUsersLabel_emailAddress}" for="emailAddress" />
+                        <p:inputText id="emailAddress" value="#{mppUsersController.selected.emailAddress}" title="#{bundle.EditMppUsersTitle_emailAddress}" required="true" requiredMessage="#{bundle.EditMppUsersRequiredMessage_emailAddress}"/>
+                        <p:outputLabel value="#{bundle.EditMppUsersLabel_firstName}" for="firstName" />
+                        <p:inputText id="firstName" value="#{mppUsersController.selected.firstName}" title="#{bundle.EditMppUsersTitle_firstName}" />
+                        <p:outputLabel value="#{bundle.EditMppUsersLabel_lastName}" for="lastName" />
+                        <p:inputText id="lastName" value="#{mppUsersController.selected.lastName}" title="#{bundle.EditMppUsersTitle_lastName}" />
+                        <p:outputLabel value="#{bundle.EditMppUsersLabel_password}" for="password" />
+                        <p:inputText id="password" value="#{mppUsersController.selected.password}" title="#{bundle.EditMppUsersTitle_password}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{mppUsersController.update}" value="#{bundle.Save}" update="display,:MppUsersListForm:datalist,:growl" oncomplete="handleSubmit(args, 'MppUsersEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="MppUsersEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

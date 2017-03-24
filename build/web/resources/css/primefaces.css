@@ -1,0 +1,129 @@
+.ui-widget {
+    font-size: 14px !important;
+}
+.ui-inputfield .ui-inputtextarea .ui-widget .ui-state-default .ui-corner-all .input2 .ui-inputtextarea-resizable {
+    font-size: 26px !important;
+}
+.ui-layout-north {
+    z-index: 20 !important;
+    overflow: visible !important;;
+}
+.ui-layout-north .ui-layout-unit-content {
+    overflow: visible !important;
+}
+.ui-widget-header {
+    text-align: center;
+    text-transform: uppercase;
+}
+.ui-button {
+    margin-top: 10px !important;
+    
+    
+}
+
+.ui-growl-item {
+    background: lightgreen !important;
+}
+
+
+
+
+
+
+
+.ui-widget select,.ui-state-active, .ui-widget-header .ui-state-active,.ui-paginator .ui-paginator-next, .ui-paginator .ui-paginator-page, .ui-paginator .ui-paginator-prev, .ui-paginator .ui-paginator-first, .ui-paginator .ui-paginator-last{
+
+    cursor: pointer;
+        margin: 5px;
+    
+    font-size: 10px;
+width: auto;
+    height: auto;
+    color: #64BEF2;
+    background-color:white !important ; 
+
+    border-radius: 5px;
+
+    border: 1px solid #66add6;
+   
+    cursor: pointer;
+}
+.ui-paginator .ui-paginator-rpp-options{
+    border-radius: 5px;
+    background-color: white !important;
+     color: #64BEF2;
+     
+      font-size: 12px !important;
+      margin-left: 0em;
+margin-right: 0em;
+text-shadow: 0px 0px 0px rgba(0,0,0,0)!important;
+
+background: white !important;
+
+
+
+      
+    
+   width: auto;
+    height: auto;
+    
+}
+ui-datatable .ui-paginator, .ui-datatable .ui-paginator {
+    padding: 2px;
+    color: whitesmoke;
+    
+}
+
+.ui-widget-header {
+    
+   background-color: white;
+    border-radius: 4px;
+    border: none;
+background: none;
+
+filter: none;
+color:#F4F4F4;
+
+text-shadow: none;
+    
+    
+}
+.ui-paginator .ui-paginator-current{
+    
+    color: black;
+    
+}
+
+.ui-datatable thead th, .ui-datatable tbody td, .ui-datatable tfoot td,.ui-datatable thead th, .ui-datatable tbody td, .ui-datatable tfoot td {
+    padding: 4px 10px;
+    overflow: hidden;
+    border-width: 4px ;
+     border-radius: 1px !important;
+    border-style: none ;
+    border-color: gainsboro !important;
+    color: black;
+    padding: auto;
+}
+
+.ui-widget-header .ui-state-default{
+    
+    background: white;
+    
+}
+
+
+
+.ui-datatable table {
+    
+    border-radius: 1px !important;
+}
+
+.ui-datatable table {
+    border-collapse: separate !important;
+}
+.ui-state-default {
+    background-color: whitesmoke !important;
+   
+}
+
+

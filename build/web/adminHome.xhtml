@@ -1,0 +1,305 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+       xmlns:pi="http://primefaces.org/ui">
+    
+    <h:head>
+        <title>YourMarketplace</title>
+        <h:outputStylesheet library="css" name="newnewcss.css"/>
+       <h:outputStylesheet library="css" name="responsive.css"/>
+         <h:outputStylesheet library="css" name="primefaces.css"/>
+       <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    </h:head>
+    
+    <h:body>
+         <div id="header">
+  
+	<div class="siteHeader">
+    	<h1 class="siteHeaderBar">
+    	<div class="imageIndent">
+    	</div>
+            <h:graphicImage value="resources/picturesForSIte/oliveBranch1.png" width="90" height="70" id="MMP-logo"/>
+    	 	</h1>
+      <div>
+    	<ul id="pagNaviHeader" class="horizBar" style="list-style-type:none" width="100">
+            <li><a href="adminHome.xhtml" >Home</a></li>
+            <li><a href="adminDisplayimage.xhtml">Recently Posted</a></li>
+            <li><a href="adminImage.xhtml">Post Item</a></li>
+            <li><a href="AdminAboutus.xhtml"> About Us</a></li>
+
+        </ul>
+      </div>
+            <div>
+                <ul id="pagNaviHeader2" class="horizBar2" style="list-style-type:none">
+                    <h:form>
+                     <li>  <h:commandLink action="#{lgbean.logout}" value="Sign out">
+                           </h:commandLink>
+                     </li>
+                        </h:form>
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            
+            <div>
+                <ul id="pagNaviHeader4" class="horizBar3" style="list-style-type:none">
+                    
+                     <li><a href="adminUserOptions.xhtml">My Account</a></li>
+                       
+                    
+                    
+                    
+                    
+                </ul>
+                <div>
+                <ul id="pagNaviHeader3" class="horizBar3" style="list-style-type:none">
+                    
+                     <li><a href="adminSearch.xhtml">Search</a></li>
+                       
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            </div>
+		
+
+ 	</div>
+    
+    
+  </div>
+        <div class="wrap">
+	<div id="innerBackground">
+				
+		<div id="content">
+				
+				
+		
+			
+		<br>
+		
+	
+
+
+
+		
+		
+		
+		
+     <div  align="center" class="RegBox input " >
+     <h:form >
+         
+       <p>Welcome to YourMarketplace with Administrative Privileges</p>
+       <p>#{lgbean.email}</p>
+ 
+      <div align="center"> 
+          <p>#{user.lastname},#{user.firstname}</p>
+          
+           <div align="center" id="pagNaviHeader5"> <a href="manageUsers.xhtml">Manage Users</a></div>
+            <div align="center" id="pagNaviHeader5"> <a href="managePosts.xhtml">Manage Posts</a></div>
+      </div>
+          
+    </h:form>
+                        
+	</div>
+                    
+   <div class="layout">
+       <br>
+       </br>
+       
+           <div class="wordborder" align="center">
+                            <h2>Items you've posted</h2>
+                            <a id="pagNaviHeader7" href="adminUserOptions.xhtml">Manage Items</a>
+		</div>
+       
+                    
+    <h:form enctype="multipart/form-data">
+        <div align="center">
+            <pi:dataTable value="#{user.getAllUserImage()}" var="item" paginator="true" rows="5"
+                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                         widgetVar="dataTable" style="width: 85%;" tableStyle="center" >           
+            
+              
+                
+                <pi:column>
+                    <f:facet name="header">
+                        <h:outputText value="Email" />
+                    </f:facet>
+                    
+             
+                  <div align="center">  <h:outputText value="#{item.email}" /></div>
+                
+                </pi:column>
+                
+      
+                
+                  <pi:column>
+                    <f:facet name="header">
+                        <h:outputText value="Item Desc" />
+                    </f:facet>
+                      <div align="center"> <h:outputText  value="#{item.itemDesc}"/></div>
+                </pi:column>
+                
+                  <pi:column>
+                    <f:facet name="header">
+                        <h:outputText value="Price" />
+                    </f:facet>
+                      <div align="center"> <h:outputText value="$#{item.price}"/></div>
+                </pi:column>
+                
+                
+                
+                
+                
+                
+                <pi:column>
+                    <f:facet name="header">
+                        <h:outputText value="Image" />
+                    </f:facet>
+                    <h:outputLink value="DisplayImage?Image_id=#{item.imageID}" target="_blank" >
+                        <div align="center">    <h:graphicImage value="DisplayImage?Image_id=#{item.imageID}" width="auto" height="auto"></h:graphicImage> </div>
+                    </h:outputLink>
+ 
+                </pi:column>
+                
+                
+        
+            </pi:dataTable>
+            </div>
+
+           
+            
+        </h:form>
+       
+          <div class="wordborder" align="center">
+                            <h2>Your Watchlist</h2>
+                            
+		</div>
+        <h:form id="form1" enctype="multipart/form-data">
+            <pi:growl id="messages" globalOnly="true" autoUpdate="false"/>
+        <div align="center">
+            <pi:dataTable value="#{user.getAllUserWatchlist()}" var="item" editable="true" paginator="true" rows="5"
+                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                         widgetVar="dataTable2" style="width: 85%;" tableStyle="center" >           
+                 <pi:ajax event="rowEditCancel" listener="#{user.onCancel2}" update=":form1:messages"   /> 
+              
+                
+                        <pi:column>
+                    <f:facet name="header">
+                        <h:outputText value="Email" />
+                    </f:facet>
+                    
+              <h:outputLink value="mailto:#{item.email}">
+                  <div align="center">  <h:outputText value="#{item.email}" /></div>
+                </h:outputLink>
+                </pi:column>
+                
+      
+                
+                  <pi:column>
+                    <f:facet name="header">
+                        <h:outputText value="Item Desc" />
+                    </f:facet>
+                      <div align="center"> <h:outputText  value="#{item.itemDesc}"/></div>
+                </pi:column>
+                
+                  <pi:column>
+                    <f:facet name="header">
+                        <h:outputText value="Price" />
+                    </f:facet>
+                      <div align="center"> <h:outputText value="$#{item.price}"/></div>
+                </pi:column>
+                
+                
+                
+                
+                
+                
+                <pi:column>
+                    <f:facet name="header">
+                        <h:outputText value="Image" />
+                    </f:facet>
+                    <h:outputLink value="DisplayImage?Image_id=#{item.imageID}" target="_blank" >
+                        <div align="center">    <h:graphicImage value="DisplayImage?Image_id=#{item.imageID}" width="auto" height="auto"></h:graphicImage> </div>
+                    </h:outputLink>
+ 
+                </pi:column>
+                 
+                 <pi:column style="width:10px">  
+                        <pi:rowEditor />  
+                    </pi:column> 
+                
+        
+            </pi:dataTable>
+            </div>
+
+           
+            
+        </h:form>
+
+        </div>
+       
+      
+       
+           
+                    
+           
+                  
+		
+			
+	  		
+			
+
+		
+		 
+      
+
+
+                </br>
+
+
+
+
+
+
+
+             
+                
+         
+            
+      
+            
+                    <br>
+                </br>
+                    <br>
+                </br><br>
+                </br><br>
+                </br>
+                    <br>
+                </br>
+        
+</div>
+            </div>
+            </div>
+       
+           
+    </h:body>
+  
+       <div align="center">
+        <div class= "footer">
+            <p1>Created by: Sammy A. </p1>
+        </div>	
+
+
+
+    </div>
+</html>

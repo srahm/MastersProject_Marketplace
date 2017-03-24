@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:pi="http://xmlns.jcp.org/jsf/passthrough">
+
+    <h:head>
+        <h:outputStylesheet library="css" name="newnewcss.css"/>
+        <h:outputStylesheet library="css" name="primefaces.css"/>
+
+        <h:outputStylesheet library="css" name="responsive.css"/>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+        <title>Image Upload</title>
+    </h:head>
+
+    <h:body>
+        <div id="header">
+
+            <div class="siteHeader">
+                <h1 class="siteHeaderBar">
+                    <div class="imageIndent">
+                    </div>
+                    <h:graphicImage value="resources/picturesForSIte/oliveBranch1.png" width="90" height="70" id="MMP-logo"/>
+                </h1>
+                <div>
+                    <ul id="pagNaviHeader" class="horizBar" style="list-style-type:none" width="100">
+                        <li><a href="registerAdmin.xhtml" >Home</a></li>
+
+                        <li><a href="displayimage2.xhtml">Recently Posted</a></li>
+                        <li><a href="image2.xhtml">Post Item</a></li>
+                        <li><a href="AboutUs2.xhtml">About Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul id="pagNaviHeader2" class="horizBar2" style="list-style-type:none">
+                        <h:form>
+                            <li>  <h:commandLink action="#{lgbean.logout}" value="Sign out">
+                                </h:commandLink>
+                            </li>
+                        </h:form>
+
+
+                    </ul>
+                </div>
+
+                <div>
+                    <ul id="pagNaviHeader4" class="horizBar3" style="list-style-type:none">
+
+                        <li><a href="userOptions2.xhtml">My Account</a></li>
+
+
+
+
+
+                    </ul>
+                </div>
+                <div>
+                    <ul id="pagNaviHeader3" class="horizBar3" style="list-style-type:none">
+
+                        <li><a href="search2.xhtml">Search</a></li>
+
+
+
+
+
+                    </ul>
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="wrap">
+            <div id="innerBackground">
+
+                <div id="content">
+
+
+
+
+                    <div class="wordborder" align="center">
+                        <h3>Recently Posted Items</h3>
+                    </div>
+
+
+
+
+
+
+                    <div class="layout">
+
+                        <h:form id="form1" enctype="multipart/form-data">
+                            <p:growl id="messages"  globalOnly="true" autoUpdate="false"> </p:growl>
+                            <p:spacer height="10"></p:spacer>
+                            <p:dataTable value="#{ImageBean.allImage}" var="item" paginator="true" rows="5"
+                                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                                         widgetVar="4" style="width: auto;" >           
+
+
+
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Email" />
+                                    </f:facet>
+
+                                    <h:outputLink value="mailto:#{item.email}">
+                                        <div align="center">  <h:outputText value="#{item.email}" /></div>
+                                    </h:outputLink>
+                                </p:column>
+
+
+
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Item Desc" />
+                                    </f:facet>
+                                    <div align="center"> <h:outputText  value="#{item.itemDesc}"/></div>
+                                </p:column>
+
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Price" />
+                                    </f:facet>
+                                    <div align="center"> <h:outputText value="$#{item.price}"/></div>
+                                </p:column>
+
+
+
+
+
+
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Image" />
+                                    </f:facet>
+                                    <h:outputLink value="DisplayImage?Image_id=#{item.imageID}" target="_blank" >
+                                        <div align="center">    <h:graphicImage value="DisplayImage?Image_id=#{item.imageID}" width="auto" height="auto"></h:graphicImage> </div>
+                                    </h:outputLink>
+
+                                </p:column>
+
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Add to Watchlist" />
+                                    </f:facet>
+
+
+
+                                    <div align="center">  <p:commandButton style="float: none" action="#{sendEmail.onWatchlist(item.imageID)}" update=":form1:messages"  icon="ui-icon-star ui-button-icon-center" /></div> 
+                                </p:column>
+                            </p:dataTable>
+
+
+                        </h:form>
+
+
+
+
+                    </div>	  		
+
+
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+            <br>
+            </br>
+        </div>
+
+
+    </h:body>
+
+    <div align="center">
+        <div class= "footer">
+            <p1>Created by: Sammy A. </p1>
+        </div>	
+
+
+
+    </div>
+</html>
